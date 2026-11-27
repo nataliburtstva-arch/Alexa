@@ -199,12 +199,9 @@ h3{font-size:clamp(1.25rem,2.2vw,1.9rem)}
   });
   desktop.addEventListener('change', () => toggleMenu(false));
 
-  const art = $('.art');
   let scrollFrame = 0;
   function updateScroll() {
     header.classList.toggle('compact', scrollY > 25);
-    const offset = desktop.matches && !reduced.matches ? Math.min(scrollY * 0.075, 24) : 0;
-    art.style.setProperty('--parallax', offset + 'px');
     scrollFrame = 0;
   }
   window.addEventListener('scroll', () => {
